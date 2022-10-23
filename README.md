@@ -1,48 +1,28 @@
-<h1 align="center"> Explorer Lab #01 </h1>
+# RocketPay (Explorer Lab #1)
 
-<p align="center">
-Evento exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologias WEB.
-</p>
+[![](https://raw.githubusercontent.com/dipimentel/explorer-lab-rocketpay/main/.github/project.png
+)](https://)
 
-<p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
-</p>
+## 💻 Sobre o projeto
+O **RocketPay** é um componente que simula o formulário de preenchimento de cartão de crédito, onde é possível adicionar máscara aos inputs e atualizar elementos HTML via DOM.
 
-<p align="center">
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
-</p>
+Este projeto foi desenvolvido no **Explorer Lab #01**, um evento promovido pela [**Rocketseat**](https://www.rocketseat.com.br/) com o objetivo de abordar a manipulação da DOM através do JavaScript e apresentar as tecnologias Vite e iMask.
 
-<br>
+O layout em Figma, bem como os arquivos HTML e CSS foram dados prontos como arquivos base para o projeto.
 
-<p align="center">
-  <img alt="rocketpay" src=".github/project.png" width="100%">
-</p>
+Para colocar os conhecimentos em prática e ir além ao proposto, incluí o layout e a validação do cartão American Express, a validação visual dos campos do fomrulário e um modal amigável de conclusão de inclusão do cartão.
 
-## 🚀 Tecnologias
+&nbsp;
+>**Acesse o projeto:** <https://>
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
-
+&nbsp;
+## 🛠 Tecnologias
 - HTML e CSS
 - JavaScript e JSON
 - [Node e NPM](https://nodejs.org/)
 - [Vite](https://vitejs.dev/)
 - [iMask](https://imask.js.org)
 
-## 💻 Projeto
-
-O Rocketpay é um componente que simula o formulário de preenchimento de cartão de crédito, onde é possível adicionar máscara aos inputs e atualizar elementos HTML via DOM.
-
-## 🔖 Layout
-
-Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/file/gpqavL469k0pPUGOmAQEM9/Explorer-Lab-%2301/duplicate). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
-
-## :memo: Licença
-
-Esse projeto está sob a licença MIT.
-
----
-
-Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discord.gg/rocketseat)
+&nbsp;
+## 🖌 Layout
+Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/gpqavL469k0pPUGOmAQEM9/Explorer-Lab-%2301/duplicate). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
