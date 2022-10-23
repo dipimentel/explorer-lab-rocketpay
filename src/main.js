@@ -7,13 +7,14 @@ const ccLogo = document.querySelector(".cc-logo span:nth-child(2) img")
 
 function setCardType(type) {
   const colors = {
-    visa: ["#436D99", "#2D57F2"],
+    visa: ["#2D57F2", "#436D99"],
     mastercard: ["#DF6F29", "#C69347"],
+    americanExpress: ["#7CD0F2", "#2D6F9E"],
     default: ["black", "gray"],
   }
 
-  ccBgColor01.setAttribute("fill", colors[type][0])
-  ccBgColor02.setAttribute("fill", colors[type][1])
+  ccBgColor01.setAttribute("fill", colors[type][1])
+  ccBgColor02.setAttribute("fill", colors[type][0])
   ccLogo.setAttribute("src", `cc-${type}.svg`)
 }
 
@@ -59,7 +60,14 @@ const cardNumberPattern = {
     },
     {
       mask: "0000 0000 0000 0000",
+      regex: /^3[47]\d{0,13}/,
+      cardtype: "americanExpress",
+    },
+    {
+      mask: "0000 0000 0000 0000",
       cardtype: "default",
+      // lazy: false,
+      // placeholderChar: "0",
     },
   ],
   dispatch: function (appended, dynamicMasked) {
@@ -73,24 +81,92 @@ const cardNumberPattern = {
 }
 const cardNumberMasked = IMask(cardNumber, cardNumberPattern)
 
+
 const addButton = document.querySelector("#add-card")
+const appWrapper = document.querySelector("#app")
+const messageWrapper = document.querySelector("#message")
+
 addButton.addEventListener("click", () => {
-  alert("Cartão adicionado!")
+  let isFormComplete =
+    cardNumberMasked.masked.isComplete &&
+    cardHolder.value != "" &&
+    expirationDateMasked.masked.isComplete &&
+    String(securityCodeMasked.value).length >= 3
+
+  if (isFormComplete) {
+    appWrapper.classList.add("hide")
+    messageWrapper.classList.remove("hide")
+  } else {
+    checkCardNumber()
+    checkCardHolder()
+    checkExpirationDate()
+    checkSecurityCode()
+  }
+})
+
+const okButton = document.querySelector("#ok-message")
+okButton.addEventListener("click", () => {
+    window.location.reload()
 })
 
 document.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault()
 })
 
+
+function checkCardNumber() {
+  if (cardNumberMasked.masked.isComplete) {
+    cardNumber.classList.remove("incomplete")
+    cardNumber.classList.add("complete")
+  } else {
+    cardNumber.classList.remove("complete")
+    cardNumber.classList.add("incomplete")
+  }
+}
+
+function checkCardHolder() {
+  if (cardHolder.value != "") {
+    cardHolder.classList.remove("incomplete")
+    cardHolder.classList.add("complete")
+  } else {
+    cardHolder.classList.remove("complete")
+    cardHolder.classList.add("incomplete")
+  }
+}
+
+function checkExpirationDate() {
+  if (expirationDateMasked.masked.isComplete) {
+    expirationDate.classList.remove("incomplete")
+    expirationDate.classList.add("complete")
+  } else {
+    expirationDate.classList.remove("complete")
+    expirationDate.classList.add("incomplete")
+  }
+}
+
+function checkSecurityCode() {
+  securityCode
+  if (String(securityCodeMasked.value).length >= 3) {
+    securityCode.classList.remove("incomplete")
+    securityCode.classList.add("complete")
+  } else {
+    securityCode.classList.remove("complete")
+    securityCode.classList.add("incomplete")
+  }
+}
+
+
 const cardHolder = document.querySelector("#card-holder")
 cardHolder.addEventListener("input", () => {
   const ccHolder = document.querySelector(".cc-holder .value")
   ccHolder.textContent =
     cardHolder.value.length === 0 ? "Fulano da Silva" : cardHolder.value
+  checkCardHolder()
 })
 
 securityCodeMasked.on("accept", () => {
   updateSecurityCode(securityCodeMasked.value);
+  checkSecurityCode()
 })
 
 function updateSecurityCode(code) {
@@ -102,6 +178,7 @@ cardNumberMasked.on("accept", () => {
   const cardType = cardNumberMasked.masked.currentMask.cardtype
   setCardType(cardType)
   updateCardNumber(cardNumberMasked.value)
+  checkCardNumber()
 })
 
 function updateCardNumber(number) {
@@ -111,9 +188,11 @@ function updateCardNumber(number) {
 
 expirationDateMasked.on("accept", () => {
   updateExpirationDate(expirationDateMasked.value)
+  checkExpirationDate()
 })
 
 function updateExpirationDate(date) {
   const ccExpiration = document.querySelector(".cc-expiration .value")
   ccExpiration.innerText = date.length === 0 ? "02/32" : date
 }
+
