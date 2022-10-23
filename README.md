@@ -10,7 +10,7 @@ Este projeto foi desenvolvido no **Explorer Lab #01**, um evento promovido pela 
 
 O layout em Figma, bem como os arquivos HTML e CSS foram dados prontos como arquivos base para o projeto.
 
-Para colocar os conhecimentos em prática e ir além ao proposto, incluí o layout e a validação do cartão American Express, a validação visual dos campos do fomrulário e um modal amigável de conclusão de inclusão do cartão.
+Para colocar os conhecimentos em prática e ir além ao proposto, incluí o layout e a validação do cartão American Express, a validação visual dos campos do formulário e um modal amigável de conclusão de inclusão do cartão.
 
 &nbsp;
 >**Acesse o projeto:** <https://explorer-lab-rocketpay-two.vercel.app/>
