@@ -1,7 +1,7 @@
 # RocketPay (Explorer Lab #1)
 
 [![](https://raw.githubusercontent.com/dipimentel/explorer-lab-rocketpay/main/.github/project.png
-)](https://)
+)](https://explorer-lab-rocketpay-two.vercel.app/)
 
 ## 💻 Sobre o projeto
 O **RocketPay** é um componente que simula o formulário de preenchimento de cartão de crédito, onde é possível adicionar máscara aos inputs e atualizar elementos HTML via DOM.
@@ -13,7 +13,7 @@ O layout em Figma, bem como os arquivos HTML e CSS foram dados prontos como arqu
 Para colocar os conhecimentos em prática e ir além ao proposto, incluí o layout e a validação do cartão American Express, a validação visual dos campos do fomrulário e um modal amigável de conclusão de inclusão do cartão.
 
 &nbsp;
->**Acesse o projeto:** <https://>
+>**Acesse o projeto:** <https://explorer-lab-rocketpay-two.vercel.app/>
 
 &nbsp;
 ## 🛠 Tecnologias
